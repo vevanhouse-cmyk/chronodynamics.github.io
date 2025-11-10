@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chronodynamics — The Science of Persistence</title>
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --fg: #ffffff;
+      --sub: #b3b3b3;
+      --accent: #3aa6ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 32px;
+    }
+    img {
+      width: 160px;
+      height: auto;
+      margin-bottom: 2rem;
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.15));
+    }
+    h1 {
+      font-size: 2.2rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin: 0.2em 0;
+    }
+    h2 {
+      font-weight: 300;
+      color: #ccc;
+      font-size: 1.1rem;
+      margin: 0.2em 0 1.5em;
+    }
+    p {
+      max-width: 640px;
+      color: var(--sub);
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: #666;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Replace logo.png with your Chronodynamics mark -->
+  <img src="logo.png" alt="Chronodynamics Logo" />
+
+  <h1>CHRONODYNAMICS</h1>
+  <h2>The Science of Persistence</h2>
+
+  <p>
+    Chronodynamics explores how energy maintains form within motion—how systems
+    sense, correct, and persist against entropy across time.  
+    <br><br>
+    It defines the laws of feedback and dissipation that govern organization at
+    every scale—from physical systems to cognition itself.
+  </p>
+
+  <p>
+    <em>Chronodynamics governs stability — Chronotrol makes it practical.</em>
+  </p>
+
+  <p>
+    Learn more at <a href="https://chronotrol.com">chronotrol.com</a>
+  </p>
+
+  <footer>
+    © <span id="year"></span> Chronodynamics • All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
