@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A Lens, Not a Belief System — Chronodynamics</title>
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --fg: #ffffff;
+      --sub: #b3b3b3;
+      --accent: #3aa6ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 32px 16px 48px;
+    }
+    img {
+      width: 120px;
+      height: auto;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.15));
+    }
+    main {
+      max-width: 720px;
+      text-align: left;
+    }
+    h1 {
+      font-size: 1.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin: 0.2em 0 0.6em;
+      text-align: center;
+    }
+    h2 {
+      font-weight: 400;
+      color: #ddd;
+      font-size: 1.2rem;
+      margin: 1.5em 0 0.4em;
+    }
+    p {
+      color: var(--sub);
+      line-height: 1.7;
+      font-size: 0.98rem;
+      margin: 0.7em 0;
+    }
+    ul {
+      color: var(--sub);
+      line-height: 1.7;
+      font-size: 0.98rem;
+      padding-left: 1.2rem;
+      margin: 0.4em 0 0.8em;
+    }
+    li {
+      margin: 0.3em 0;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .back-link {
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+    blockquote {
+      border-left: 3px solid var(--accent);
+      margin: 1rem 0;
+      padding-left: 0.8rem;
+      color: #e0e0e0;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <img src="logo.png" alt="Chronodynamics Logo" />
+
+  <main>
+    <div class="back-link">
+      <a href="index.html">← Back to Chronodynamics home</a>
+    </div>
+
+    <h1>A Lens, Not a Belief System</h1>
+
+    <blockquote>
+      Chronodynamics isn’t something you have to “believe in.” It’s a pair of glasses you can put on over whatever you already know.
+    </blockquote>
+
+    <p>
+      Chronodynamics doesn’t ask you to throw away physics, biology, psychology, economics,
+      or any other way of understanding the world. It isn’t a new religion or a grand theory you
+      have to sign up for. It’s a way of looking at what’s already there and asking one more set
+      of questions about how it holds together in time.
+    </p>
+
+    <p>
+      Think of it as a lens you can place on top of any system you care about—a body, a habit,
+      a relationship, a team, a company, a government, a culture—and gently ask:
+    </p>
+
+    <ul>
+      <li>What is this trying to <strong>keep alive or intact</strong> over time?</li>
+      <li>What kinds of <strong>disturbances</strong> regularly threaten it?</li>
+      <li>How does it <strong>notice</strong> those disturbances—or fail to?</li>
+      <li>How <strong>quickly</strong> and how <strong>wisely</strong> does it respond?</li>
+      <li>Do its responses actually protect what matters, or just push problems around?</li>
+      <li>Does it <strong>learn</strong>, so that future responses can be earlier, smaller, and kinder?</li>
+    </ul>
+
+    <h2>Different things start to rhyme</h2>
+
+    <p>
+      When you look through that lens, very different parts of life start to rhyme:
+    </p>
+
+    <ul>
+      <li>
+        A machine that gets regular, thoughtful maintenance, and a marriage that gets regular,
+        thoughtful conversation.
+      </li>
+      <li>
+        A nervous system learning to calm itself, and a society learning to handle disagreement
+        without tearing itself apart.
+      </li>
+      <li>
+        A personal habit that quietly undermines you, and a policy that quietly undermines the
+        very people it’s supposed to help.
+      </li>
+    </ul>
+
+    <p>
+      These aren’t the same things—but they share a similar structure in time. In each case,
+      something valuable is being held together (or not) by how well it notices trouble,
+      responds in time, and learns from the process.
+    </p>
+
+    <h2>Use it, don’t “believe” it</h2>
+
+    <p>
+      Chronodynamics is meant to be <em>used</em>, not worshipped. You can treat it as a
+      working tool:
+    </p>
+
+    <ul>
+      <li>
+        Try applying it to a situation in your own life or work. Does it make anything clearer?
+      </li>
+      <li>
+        Use its questions in a meeting, a planning session, or a private reflection.
+      </li>
+      <li>
+        Notice where it helps you see earlier or act more gently—and where it doesn’t.
+      </li>
+    </ul>
+
+    <p>
+      If the lens helps you see important patterns you were missing, keep it. If it doesn’t,
+      set it down. Chronodynamics doesn’t need faith; it either helps you make better sense of
+      how things hold together in time—or it doesn’t.
+    </p>
+
+    <p>
+      The rest of this site explores how that same simple lens can be used across scales—from
+      personal habits to organizations and large systems. You’re invited to try it on wherever
+      it feels relevant, and see what comes into focus.
+    </p>
+  </main>
+</body>
+</html>
