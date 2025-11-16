@@ -6,147 +6,352 @@
   <title>Chronodynamics — The Science of Persistence</title>
   <style>
     :root {
-      --bg: #0b0b0b;
+      --bg: #05070b;
+      --bg-soft: #0e1118;
       --fg: #ffffff;
       --sub: #b3b3b3;
       --accent: #3aa6ff;
+      --accent-soft: rgba(58, 166, 255, 0.12);
+      --border-soft: rgba(255, 255, 255, 0.08);
     }
-    * { box-sizing: border-box; }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       min-height: 100vh;
+      background: radial-gradient(circle at top, #111827, #020308 55%);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 32px;
+      padding: 32px 16px;
     }
-    img {
-      width: 160px;
-      height: auto;
-      margin-bottom: 2rem;
-      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.15));
+
+    .shell {
+      width: 100%;
+      max-width: 1100px;
+      background: linear-gradient(
+        145deg,
+        rgba(17, 24, 39, 0.96),
+        rgba(3, 7, 18, 0.98)
+      );
+      border-radius: 24px;
+      padding: 32px 22px 28px;
+      border: 1px solid var(--border-soft);
+      box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(255, 255, 255, 0.02);
     }
-    h1 {
-      font-size: 2.2rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin: 0.2em 0;
+
+    @media (min-width: 900px) {
+      .shell {
+        padding: 40px 40px 32px;
+      }
     }
-    h2 {
-      font-weight: 300;
-      color: #ccc;
-      font-size: 1.1rem;
-      margin: 0.2em 0 1.5em;
+
+    .layout {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
     }
-    p {
-      max-width: 640px;
-      color: var(--sub);
-      line-height: 1.6;
-      font-size: 1rem;
+
+    @media (min-width: 900px) {
+      .layout {
+        flex-direction: row;
+        align-items: flex-start;
+      }
     }
-    a {
-      color: var(--accent);
-      text-decoration: none;
+
+    .main {
+      flex: 1 1 auto;
+      min-width: 0;
     }
-    a:hover {
-      text-decoration: underline;
+
+    .side {
+      flex: 0 0 260px;
+      min-width: 240px;
     }
-    .btn {
-      display: inline-block;
-      margin: 0.5rem 0.4rem;
-      padding: 0.6rem 1.4rem;
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    header .top-row {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      width: 72px;
+      height: 72px;
       border-radius: 999px;
-      border: 1px solid var(--accent);
-      background: var(--accent);
-      color: #000;
-      font-size: 0.95rem;
-      font-weight: 500;
-      text-decoration: none;
-      letter-spacing: 0.03em;
+      background: radial-gradient(circle at 30% 30%, #3aa6ff, #020617);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow:
+        0 0 20px rgba(58, 166, 255, 0.6),
+        0 0 0 1px rgba(255, 255, 255, 0.3);
+      overflow: hidden;
     }
-    .btn:hover {
-      background: #66b9ff;
-      border-color: #66b9ff;
-      text-decoration: none;
+
+    .logo span {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
     }
-    /* Large top-right button */
-    .btn-top {
-      position: fixed;
-      top: 24px;
-      right: 32px;
-      padding: 0.8rem 1.8rem;
-      font-size: 1rem;
-      border-radius: 999px;
-      border: 1px solid var(--accent);
-      background: var(--accent);
-      color: #000;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      z-index: 10;
-      text-decoration: none;
-    }
-    .btn-top:hover {
-      background: #66b9ff;
-      border-color: #66b9ff;
-      text-decoration: none;
-    }
-    footer {
-      position: fixed;
-      bottom: 1.5rem;
-      left: 0;
-      right: 0;
-      text-align: center;
-      color: #666;
+
+    .eyebrow {
       font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.9rem, 2.4vw + 1.2rem, 2.5rem);
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--sub);
+      font-size: 0.98rem;
+      max-width: 40rem;
+    }
+
+    .nav-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    @media (min-width: 640px) {
+      .nav-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .nav-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 1px solid var(--border-soft);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--fg);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.15s ease, transform 0.12s ease,
+        box-shadow 0.12s ease, border-color 0.12s ease;
+      text-align: center;
+      white-space: normal;
+    }
+
+    .nav-button:hover {
+      background: var(--accent);
+      color: #020617;
+      border-color: var(--accent);
+      transform: translateY(-1px);
+      box-shadow: 0 18px 30px rgba(58, 166, 255, 0.45);
+    }
+
+    .nav-button.secondary {
+      background: rgba(15, 23, 42, 0.5);
+      color: var(--sub);
+    }
+
+    .nav-button.secondary:hover {
+      color: #020617;
+    }
+
+    .tagline {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: var(--sub);
+    }
+
+    /* Sidebar box */
+
+    .perspective-box {
+      border-radius: 18px;
+      padding: 16px 16px 14px;
+      background: radial-gradient(circle at top right, #020617, #020308);
+      border: 1px solid var(--border-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .perspective-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at top right,
+        rgba(58, 166, 255, 0.14),
+        transparent 60%
+      );
+      opacity: 0.85;
+      pointer-events: none;
+    }
+
+    .perspective-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .perspective-title {
+      font-size: 0.96rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin: 0 0 6px;
+      font-weight: 600;
+    }
+
+    .perspective-heading {
+      font-size: 1.05rem;
+      margin: 0 0 8px;
+    }
+
+    .perspective-copy {
+      font-size: 0.88rem;
+      color: var(--sub);
+      margin: 0 0 10px;
+    }
+
+    .perspective-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .perspective-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 1px solid var(--accent);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 500;
+      text-align: center;
+      transition: background 0.15s ease, color 0.15s ease,
+        transform 0.12s ease, box-shadow 0.12s ease;
+      white-space: normal;
+    }
+
+    .perspective-button:hover {
+      background: var(--accent);
+      color: #020617;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 26px rgba(58, 166, 255, 0.45);
+    }
+
+    .perspective-note {
+      margin-top: 8px;
+      font-size: 0.78rem;
+      color: var(--sub);
+      opacity: 0.9;
     }
   </style>
 </head>
 <body>
-  <!-- Large top-right button -->
-  <a href="sound-familiar.html" class="btn-top">
-    Sound Familiar?
-  </a>
+  <div class="shell">
+    <div class="layout">
+      <!-- MAIN CONTENT -->
+      <div class="main">
+        <header>
+          <div class="top-row">
+            <div class="logo">
+              <!-- If you have a logo image, replace the span with <img src="logo.png" alt="Chronodynamics logo" /> -->
+              <span>CΔ</span>
+            </div>
+            <div>
+              <div class="eyebrow">Chronodynamics</div>
+              <h1>The Science of Persistence</h1>
+            </div>
+          </div>
+          <p class="subtitle">
+            Chronodynamics is a way of looking at how things manage to
+            <strong>keep going</strong>—or slowly fall apart—over time. It’s a
+            lens for systems, from galaxies and ecosystems to economies,
+            technologies, and everyday life.
+          </p>
+        </header>
 
-  <!-- Replace logo.png with your Chronodynamics mark -->
-  <img src="logo.png" alt="Chronodynamics Logo" />
+        <nav class="nav-grid">
+          <a class="nav-button" href="what-is-chronodynamics.html">
+            What Is Chronodynamics?
+          </a>
+          <a class="nav-button secondary" href="a-lens-not-a-belief.html">
+            A Lens, Not a Belief System
+          </a>
+          <a class="nav-button secondary" href="origins-in-science.html">
+            Origins in Science
+          </a>
+          <a class="nav-button secondary" href="why-this-matters-now.html">
+            Why This Matters Now
+          </a>
+          <a class="nav-button secondary" href="what-youll-find-here.html">
+            What You’ll Find Here
+          </a>
+        </nav>
 
-  <h1>CHRONODYNAMICS</h1>
-  <h2>The Science of Persistence</h2>
+        <p class="tagline">
+          Start anywhere. Each page is a different angle on the same question:
+          <em>what lets patterns, structures, and lives persist in a universe
+          that’s always running downhill?</em>
+        </p>
+      </div>
 
-  <p>
-    Chronodynamics explores how energy maintains form within motion—how systems
-    sense, correct, and persist against entropy across time.  
-    <br><br>
-    It defines the laws of feedback and dissipation that govern organization at
-    every scale—from physical systems to cognition itself.
-  </p>
-
-  <p>
-    <em>Chronodynamics governs stability — Chronotrol makes it practical.</em>
-  </p>
-
-  <!-- Main call-to-action button row -->
-  <p>
-    <a href="what-is-chronodynamics.html" class="btn">
-      What is Chronodynamics?
-    </a>
-  </p>
-
-  <p>
-    Learn more at <a href="https://chronotrol.com">chronotrol.com</a>
-  </p>
-
-  <footer>
-    © <span id="year"></span> Chronodynamics • All rights reserved.
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+      <!-- SIDEBAR: PERSPECTIVE BOX -->
+      <aside class="side">
+        <div class="perspective-box">
+          <div class="perspective-inner">
+            <p class="perspective-title">Perspective in Chronodynamics</p>
+            <h2 class="perspective-heading">Does this time-pattern feel familiar?</h2>
+            <p class="perspective-copy">
+              Chronodynamics isn’t only about physics. It’s a way to see the
+              hidden timing behind everyday systems—how they drift, react, or
+              quietly fall behind long before they break.
+            </p>
+            <div class="perspective-buttons">
+              <a class="perspective-button" href="sound-familiar.html">
+                Sound Familiar
+              </a>
+              <a class="perspective-button" href="healthcare.html">
+                A Chronodynamic Look at U.S. Healthcare
+              </a>
+            </div>
+            <p class="perspective-note">
+              Short, concrete stories that show Chronodynamics at work in real
+              lives and real systems.
+            </p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
 </body>
 </html>
