@@ -7,17 +7,13 @@
   <style>
     :root {
       --bg: #05070b;
-      --bg-soft: #0e1118;
       --fg: #ffffff;
       --sub: #b3b3b3;
       --accent: #3aa6ff;
-      --accent-soft: rgba(58, 166, 255, 0.12);
       --border-soft: rgba(255, 255, 255, 0.08);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -41,17 +37,11 @@
         rgba(3, 7, 18, 0.98)
       );
       border-radius: 24px;
-      padding: 32px 22px 28px;
+      padding: 40px;
       border: 1px solid var(--border-soft);
       box-shadow:
         0 30px 80px rgba(0, 0, 0, 0.7),
         0 0 0 1px rgba(255, 255, 255, 0.02);
-    }
-
-    @media (min-width: 900px) {
-      .shell {
-        padding: 40px 40px 32px;
-      }
     }
 
     .layout {
@@ -75,19 +65,19 @@
     .side {
       flex: 0 0 260px;
       min-width: 240px;
+      margin-top: 12px;
     }
 
     header {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
       gap: 16px;
       margin-bottom: 24px;
     }
 
-    header .top-row {
+    .top-row {
       display: flex;
-      gap: 16px;
+      gap: 20px;
       align-items: center;
       flex-wrap: wrap;
     }
@@ -96,14 +86,10 @@
       width: 88px;
       height: 88px;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, #3aa6ff, #020617);
+      overflow: hidden;
       box-shadow:
         0 0 22px rgba(58, 166, 255, 0.7),
-        0 0 0 1px rgba(255, 255, 255, 0.4);
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+        0 0 0 1px rgba(255, 255, 255, 0.35);
     }
 
     .logo img {
@@ -123,7 +109,7 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(1.9rem, 2.4vw + 1.2rem, 2.5rem);
+      font-size: clamp(2rem, 2.4vw + 1.2rem, 2.7rem);
       line-height: 1.15;
     }
 
@@ -138,7 +124,7 @@
       display: grid;
       grid-template-columns: minmax(0, 1fr);
       gap: 12px;
-      margin-top: 18px;
+      margin-top: 20px;
     }
 
     @media (min-width: 640px) {
@@ -151,35 +137,25 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 12px 16px;
+      padding: 12px 18px;
       border-radius: 999px;
       text-decoration: none;
-      border: 1px solid var(--border-soft);
-      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid #111827;
+      background: #050814;
       color: var(--fg);
       font-size: 0.9rem;
       font-weight: 500;
       transition: background 0.15s ease, transform 0.12s ease,
-        box-shadow 0.12s ease, border-color 0.12s ease;
-      text-align: center;
+        box-shadow 0.12s ease, color 0.12s ease;
       white-space: normal;
+      pointer-events: auto;
     }
 
     .nav-button:hover {
       background: var(--accent);
       color: #020617;
-      border-color: var(--accent);
       transform: translateY(-1px);
       box-shadow: 0 18px 30px rgba(58, 166, 255, 0.45);
-    }
-
-    .nav-button.secondary {
-      background: rgba(15, 23, 42, 0.7);
-      color: var(--sub);
-    }
-
-    .nav-button.secondary:hover {
-      color: #020617;
     }
 
     .tagline {
@@ -189,43 +165,14 @@
       max-width: 38rem;
     }
 
-    .tagline em {
-      font-style: italic;
-    }
-
-    /* Sidebar box */
+    .tagline em { font-style: italic; }
 
     .perspective-box {
       border-radius: 24px;
       padding: 18px 18px 16px;
-      background: radial-gradient(circle at top right, #020617, #020308);
+      background: #020813;
       border: 1px solid var(--border-soft);
-      position: relative;
-      overflow: hidden;
-      height: 100%;
-      display: flex;
-      align-items: stretch;
-    }
-
-    .perspective-box::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        circle at top right,
-        rgba(58, 166, 255, 0.14),
-        transparent 60%
-      );
-      opacity: 0.85;
-      pointer-events: none;
-    }
-
-    .perspective-inner {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
     }
 
     .perspective-title {
@@ -233,7 +180,7 @@
       text-transform: uppercase;
       letter-spacing: 0.22em;
       color: var(--accent);
-      margin: 0 0 4px;
+      margin: 0 0 6px;
       font-weight: 600;
     }
 
@@ -246,32 +193,31 @@
     .perspective-copy {
       font-size: 0.9rem;
       color: var(--sub);
-      margin: 0 0 10px;
+      margin: 0 0 12px;
     }
 
     .perspective-buttons {
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-top: 6px;
+      margin-top: 4px;
     }
 
     .perspective-button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 10px 12px;
+      padding: 10px 14px;
       border-radius: 999px;
       text-decoration: none;
       border: 1px solid var(--accent);
-      background: rgba(15, 23, 42, 0.95);
+      background: #050814;
       color: var(--accent);
       font-size: 0.9rem;
       font-weight: 500;
-      text-align: center;
       transition: background 0.15s ease, color 0.15s ease,
         transform 0.12s ease, box-shadow 0.12s ease;
-      white-space: normal;
+      pointer-events: auto;
     }
 
     .perspective-button:hover {
@@ -292,13 +238,13 @@
 <body>
   <div class="shell">
     <div class="layout">
-      <!-- LEFT COLUMN -->
+      <!-- LEFT SIDE -->
       <div class="main">
         <header>
           <div class="top-row">
             <div class="logo">
-              <!-- Use your original Chronodynamics logo file here -->
-              <img src="chronodynamics-logo.png" alt="Chronodynamics logo" />
+              <!-- your provided logo file -->
+              <img src="logo.png" alt="Chronodynamics logo" />
             </div>
             <div>
               <div class="eyebrow">CHRONODYNAMICS</div>
@@ -314,20 +260,20 @@
         </header>
 
         <nav class="nav-grid">
-          <!-- Make sure these filenames match your actual pages -->
+          <!-- make sure these filenames exist in the same folder -->
           <a class="nav-button" href="what-is-chronodynamics.html">
             What Is Chronodynamics?
           </a>
-          <a class="nav-button secondary" href="a-lens-not-a-belief-system.html">
+          <a class="nav-button" href="a-lens-not-a-belief-system.html">
             A Lens, Not a Belief System
           </a>
-          <a class="nav-button secondary" href="origins-in-science.html">
+          <a class="nav-button" href="origins-in-science.html">
             Origins in Science
           </a>
-          <a class="nav-button secondary" href="why-this-matters-now.html">
+          <a class="nav-button" href="why-this-matters-now.html">
             Why This Matters Now
           </a>
-          <a class="nav-button secondary" href="what-youll-find-here.html">
+          <a class="nav-button" href="what-youll-find-here.html">
             What You’ll Find Here
           </a>
         </nav>
@@ -339,35 +285,31 @@
         </p>
       </div>
 
-      <!-- RIGHT COLUMN -->
+      <!-- RIGHT SIDE -->
       <aside class="side">
         <div class="perspective-box">
-          <div class="perspective-inner">
-            <p class="perspective-title">Perspective in Chronodynamics</p>
-            <h2 class="perspective-heading">Does this time-pattern feel familiar?</h2>
-            <p class="perspective-copy">
-              Chronodynamics isn’t only about physics. It’s a way to see the
-              hidden timing behind everyday systems&mdash;how they drift, react,
-              or quietly fall behind long before they break.
-            </p>
-            <div class="perspective-buttons">
-              <a class="perspective-button" href="sound-familiar.html">
-                Sound Familiar
-              </a>
-              <a class="perspective-button" href="healthcare.html">
-                A Chronodynamic Look at U.S. Healthcare
-              </a>
-            </div>
-            <p class="perspective-note">
-              Short, concrete stories that show Chronodynamics at work in real
-              lives and real systems.
-            </p>
+          <p class="perspective-title">Perspective in Chronodynamics</p>
+          <h2 class="perspective-heading">Does this time-pattern feel familiar?</h2>
+          <p class="perspective-copy">
+            Chronodynamics isn’t only about physics. It’s a way to see the hidden
+            timing behind everyday systems&mdash;how they drift, react, or quietly
+            fall behind long before they break.
+          </p>
+          <div class="perspective-buttons">
+            <a class="perspective-button" href="sound-familiar.html">
+              Sound Familiar
+            </a>
+            <a class="perspective-button" href="healthcare.html">
+              A Chronodynamic Look at U.S. Healthcare
+            </a>
           </div>
+          <p class="perspective-note">
+            Short, concrete stories that show Chronodynamics at work in real lives
+            and real systems.
+          </p>
         </div>
       </aside>
     </div>
   </div>
 </body>
 </html>
-
-
