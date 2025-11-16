@@ -79,7 +79,7 @@
       display: flex;
       gap: 22px;
       align-items: center;
-      flex-wrap: nowrap; /* keep logo and title side-by-side */
+      flex-wrap: nowrap;
     }
 
     @media (max-width: 720px) {
@@ -115,18 +115,23 @@
       min-width: 0;
     }
 
+    /* BIG Chronodynamics™ */
     .eyebrow {
-      font-size: 0.9rem; /* slightly larger */
-      letter-spacing: 0.18em;
+      font-size: clamp(2.1rem, 2.4vw + 1.4rem, 2.7rem);
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent);
-      font-weight: 600;
+      font-weight: 700;
+      line-height: 1.05;
+      white-space: nowrap;
     }
 
+    /* Small tagline so it fits to the right of the logo */
     h1 {
       margin: 4px 0 0;
-      font-size: clamp(2.5rem, 3vw + 1.6rem, 3.2rem); /* scaled up */
-      line-height: 1.12;
+      font-size: 0.95rem;
+      line-height: 1.3;
+      color: var(--sub);
       white-space: nowrap;
     }
 
@@ -330,8 +335,8 @@
       <!-- RIGHT SIDE -->
       <aside class="side">
         <div class="perspective-box">
-          <p class="perspective-title">Perspective in Chronodynamics</p>
-          <h2 class="perspective-heading">Does this time-pattern feel familiar?</h2>
+          <p class="perspective-title">Perspectives in Chronodynamics</p>
+          <h2 class="perspective-heading">Real life in Chronodynamic terms</h2>
           <p class="perspective-copy">
             Chronodynamics isn’t only about physics. It’s a way to see the
             hidden timing behind everyday systems&mdash;how they drift, react,
@@ -339,7 +344,7 @@
           </p>
           <div class="perspective-buttons">
             <a class="perspective-button" href="./sound-familiar.html">
-              Sound Familiar
+              Sound Familiar?
             </a>
             <a class="perspective-button" href="./healthcare.html">
               A Chronodynamic Look at U.S. Healthcare
