@@ -77,18 +77,18 @@
 
     .top-row {
       display: flex;
-      gap: 20px;
+      gap: 22px;
       align-items: center;
       flex-wrap: wrap;
     }
 
     .logo {
-      width: 88px;
-      height: 88px;
+      width: 132px;   /* 1.5x bigger */
+      height: 132px;
       border-radius: 999px;
       overflow: hidden;
       box-shadow:
-        0 0 22px rgba(58, 166, 255, 0.7),
+        0 0 26px rgba(58, 166, 255, 0.75),
         0 0 0 1px rgba(255, 255, 255, 0.35);
     }
 
@@ -100,7 +100,7 @@
     }
 
     .eyebrow {
-      font-size: 0.8rem;
+      font-size: 0.86rem; /* slightly larger */
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--accent);
@@ -108,9 +108,9 @@
     }
 
     h1 {
-      margin: 0;
-      font-size: clamp(2rem, 2.4vw + 1.2rem, 2.7rem);
-      line-height: 1.15;
+      margin: 2px 0 0;
+      font-size: clamp(2.4rem, 2.8vw + 1.4rem, 3.1rem); /* scaled up */
+      line-height: 1.12;
     }
 
     .subtitle {
@@ -322,7 +322,7 @@
           </p>
           <div class="perspective-buttons">
             <a class="perspective-button" href="./sound-familiar.html">
-              Sound Familiar?
+              Sound Familiar
             </a>
             <a class="perspective-button" href="./healthcare.html">
               A Chronodynamic Look at U.S. Healthcare
@@ -338,5 +338,3 @@
   </div>
 </body>
 </html>
-
-
