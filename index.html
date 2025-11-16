@@ -74,6 +74,27 @@
       border-color: #66b9ff;
       text-decoration: none;
     }
+    /* Large top-right button */
+    .btn-top {
+      position: fixed;
+      top: 24px;
+      right: 32px;
+      padding: 0.8rem 1.8rem;
+      font-size: 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #000;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      z-index: 10;
+      text-decoration: none;
+    }
+    .btn-top:hover {
+      background: #66b9ff;
+      border-color: #66b9ff;
+      text-decoration: none;
+    }
     footer {
       position: fixed;
       bottom: 1.5rem;
@@ -86,6 +107,11 @@
   </style>
 </head>
 <body>
+  <!-- Large top-right button -->
+  <a href="sound-familiar.html" class="btn-top">
+    Sound Familiar?
+  </a>
+
   <!-- Replace logo.png with your Chronodynamics mark -->
   <img src="logo.png" alt="Chronodynamics Logo" />
 
@@ -104,13 +130,10 @@
     <em>Chronodynamics governs stability — Chronotrol makes it practical.</em>
   </p>
 
-  <!-- New buttons row -->
+  <!-- Main call-to-action button row -->
   <p>
     <a href="what-is-chronodynamics.html" class="btn">
       What is Chronodynamics?
-    </a>
-    <a href="sound-familiar.html" class="btn">
-      Sound Familiar?
     </a>
   </p>
 
