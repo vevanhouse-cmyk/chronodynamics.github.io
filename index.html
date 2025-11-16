@@ -79,17 +79,25 @@
       display: flex;
       gap: 22px;
       align-items: center;
-      flex-wrap: wrap;
+      flex-wrap: nowrap; /* keep logo and title side-by-side */
+    }
+
+    @media (max-width: 720px) {
+      .top-row {
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
     }
 
     .logo {
-      width: 132px;   /* 1.5x bigger */
+      width: 132px;
       height: 132px;
       border-radius: 999px;
       overflow: hidden;
       box-shadow:
         0 0 26px rgba(58, 166, 255, 0.75),
         0 0 0 1px rgba(255, 255, 255, 0.35);
+      flex: 0 0 auto;
     }
 
     .logo img {
@@ -99,8 +107,16 @@
       display: block;
     }
 
+    .title-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
     .eyebrow {
-      font-size: 0.86rem; /* slightly larger */
+      font-size: 0.9rem; /* slightly larger */
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--accent);
@@ -108,9 +124,10 @@
     }
 
     h1 {
-      margin: 2px 0 0;
-      font-size: clamp(2.4rem, 2.8vw + 1.4rem, 3.1rem); /* scaled up */
+      margin: 4px 0 0;
+      font-size: clamp(2.5rem, 3vw + 1.6rem, 3.2rem); /* scaled up */
       line-height: 1.12;
+      white-space: nowrap;
     }
 
     .subtitle {
@@ -259,7 +276,7 @@
             <div class="logo">
               <img src="logo.png" alt="Chronodynamics logo" />
             </div>
-            <div>
+            <div class="title-block">
               <div class="eyebrow">CHRONODYNAMICS&trade;</div>
               <h1>The Science of Persistence</h1>
             </div>
@@ -313,8 +330,8 @@
       <!-- RIGHT SIDE -->
       <aside class="side">
         <div class="perspective-box">
-          <p class="perspective-title">Perspectives in Chronodynamics</p>
-          <h2 class="perspective-heading">Everyday life in Chronodynamic terms</h2>
+          <p class="perspective-title">Perspective in Chronodynamics</p>
+          <h2 class="perspective-heading">Does this time-pattern feel familiar?</h2>
           <p class="perspective-copy">
             Chronodynamics isn’t only about physics. It’s a way to see the
             hidden timing behind everyday systems&mdash;how they drift, react,
