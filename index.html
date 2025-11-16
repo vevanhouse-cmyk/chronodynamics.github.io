@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>A Chronodynamic Look at U.S. Healthcare</title>
+  <title>Chronodynamics — The Science of Persistence</title>
   <style>
     :root {
       --bg: #05070b;
@@ -80,11 +80,12 @@
     header {
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      margin-bottom: 16px;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
     }
 
-    .top-row {
+    header .top-row {
       display: flex;
       gap: 16px;
       align-items: center;
@@ -92,17 +93,17 @@
     }
 
     .logo {
-      width: 72px;
-      height: 72px;
+      width: 88px;
+      height: 88px;
       border-radius: 999px;
       background: radial-gradient(circle at 30% 30%, #3aa6ff, #020617);
+      box-shadow:
+        0 0 22px rgba(58, 166, 255, 0.7),
+        0 0 0 1px rgba(255, 255, 255, 0.4);
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow:
-        0 0 20px rgba(58, 166, 255, 0.6),
-        0 0 0 1px rgba(255, 255, 255, 0.3);
-      overflow: hidden;
     }
 
     .logo img {
@@ -122,7 +123,7 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(1.8rem, 2.4vw + 1.2rem, 2.4rem);
+      font-size: clamp(1.9rem, 2.4vw + 1.2rem, 2.5rem);
       line-height: 1.15;
     }
 
@@ -133,165 +134,77 @@
       max-width: 40rem;
     }
 
-    main {
-      font-size: 0.98rem;
-      line-height: 1.6;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    h2 {
-      margin: 10px 0 6px;
-      font-size: 1.2rem;
-      line-height: 1.3;
-    }
-
-    p {
-      margin: 0 0 0.6em;
-    }
-
-    p:last-child {
-      margin-bottom: 0;
-    }
-
-    .section-label {
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 4px;
-    }
-
-    .story {
-      border-radius: 18px;
-      padding: 16px 16px 14px;
-      background: radial-gradient(circle at top, #020617, #020308);
-      border: 1px solid var(--border-soft);
-      position: relative;
-      overflow: hidden;
-      margin-top: 6px;
-      margin-bottom: 4px;
-    }
-
-    .story::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        circle at top right,
-        rgba(58, 166, 255, 0.14),
-        transparent 60%
-      );
-      opacity: 0.85;
-      pointer-events: none;
-    }
-
-    .story-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .story-tagline {
-      font-size: 0.9rem;
-      color: var(--sub);
-      margin-bottom: 8px;
-    }
-
-    .story-name {
-      font-weight: 600;
-      color: var(--fg);
-    }
-
-    ul {
-      margin: 0.1em 0 0.8em 1.1em;
-      padding: 0;
-    }
-
-    li {
-      margin-bottom: 0.25em;
-    }
-
-    .compare {
+    .nav-grid {
       display: grid;
       grid-template-columns: minmax(0, 1fr);
       gap: 12px;
-      margin-top: 2px;
+      margin-top: 18px;
     }
 
-    @media (min-width: 720px) {
-      .compare {
+    @media (min-width: 640px) {
+      .nav-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
-    .compare-card {
-      border-radius: 14px;
-      padding: 10px 12px 10px;
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid var(--border-soft);
-      font-size: 0.92rem;
-    }
-
-    .compare-title {
-      font-size: 0.86rem;
-      font-weight: 600;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 4px;
-    }
-
-    .nav-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.9rem;
-      color: var(--sub);
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
     .nav-button {
-      text-decoration: none;
-      padding: 6px 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
       border-radius: 999px;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      font-size: 0.84rem;
-      background: rgba(15, 23, 42, 0.8);
-      transition: background 0.16s ease, color 0.16s ease,
-        transform 0.12s ease, box-shadow 0.12s ease;
+      text-decoration: none;
+      border: 1px solid var(--border-soft);
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--fg);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.15s ease, transform 0.12s ease,
+        box-shadow 0.12s ease, border-color 0.12s ease;
+      text-align: center;
+      white-space: normal;
     }
 
     .nav-button:hover {
       background: var(--accent);
       color: #020617;
+      border-color: var(--accent);
       transform: translateY(-1px);
-      box-shadow: 0 10px 24px rgba(58, 166, 255, 0.45);
+      box-shadow: 0 18px 30px rgba(58, 166, 255, 0.45);
     }
 
-    .nav-note {
-      font-size: 0.8rem;
-      opacity: 0.9;
+    .nav-button.secondary {
+      background: rgba(15, 23, 42, 0.7);
+      color: var(--sub);
     }
 
-    /* Sidebar box reused for visual consistency */
+    .nav-button.secondary:hover {
+      color: #020617;
+    }
+
+    .tagline {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: var(--sub);
+      max-width: 38rem;
+    }
+
+    .tagline em {
+      font-style: italic;
+    }
+
+    /* Sidebar box */
 
     .perspective-box {
-      border-radius: 18px;
-      padding: 16px 16px 14px;
+      border-radius: 24px;
+      padding: 18px 18px 16px;
       background: radial-gradient(circle at top right, #020617, #020308);
       border: 1px solid var(--border-soft);
       position: relative;
       overflow: hidden;
+      height: 100%;
+      display: flex;
+      align-items: stretch;
     }
 
     .perspective-box::before {
@@ -310,24 +223,28 @@
     .perspective-inner {
       position: relative;
       z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
 
     .perspective-title {
-      font-size: 0.96rem;
+      font-size: 0.82rem;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.22em;
       color: var(--accent);
-      margin: 0 0 6px;
+      margin: 0 0 4px;
       font-weight: 600;
     }
 
     .perspective-heading {
-      font-size: 1.05rem;
-      margin: 0 0 8px;
+      font-size: 1rem;
+      margin: 0 0 6px;
+      font-weight: 600;
     }
 
     .perspective-copy {
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       color: var(--sub);
       margin: 0 0 10px;
     }
@@ -335,7 +252,7 @@
     .perspective-buttons {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 10px;
       margin-top: 6px;
     }
 
@@ -343,13 +260,13 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 8px 12px;
+      padding: 10px 12px;
       border-radius: 999px;
       text-decoration: none;
       border: 1px solid var(--accent);
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(15, 23, 42, 0.95);
       color: var(--accent);
-      font-size: 0.86rem;
+      font-size: 0.9rem;
       font-weight: 500;
       text-align: center;
       transition: background 0.15s ease, color 0.15s ease,
@@ -366,7 +283,7 @@
 
     .perspective-note {
       margin-top: 8px;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       color: var(--sub);
       opacity: 0.9;
     }
@@ -375,372 +292,75 @@
 <body>
   <div class="shell">
     <div class="layout">
-      <!-- MAIN COLUMN -->
+      <!-- LEFT COLUMN -->
       <div class="main">
         <header>
           <div class="top-row">
             <div class="logo">
-              <!-- Use the same logo image src you use on your original index page -->
-            <img src="chronodynamics-logo.png" alt="Chronodynamics logo" />
+              <!-- Use your original Chronodynamics logo file here -->
+              <img src="chronodynamics-logo.png" alt="Chronodynamics logo" />
             </div>
             <div>
-              <div class="eyebrow">Perspective in Chronodynamics</div>
-              <h1>A Chronodynamic Look at U.S. Healthcare</h1>
+              <div class="eyebrow">CHRONODYNAMICS</div>
+              <h1>The Science of Persistence</h1>
             </div>
           </div>
           <p class="subtitle">
-            Chronodynamics is a way of looking at
-            <strong>how things play out over time</strong>: how quickly a system
-            notices trouble, how it responds, and whether its efforts help good
-            things last or just delay the crash. Through that lens, U.S.
-            healthcare isn’t mainly “good” or “bad.” It’s
-            <strong>badly timed</strong>.
+            Chronodynamics is a way of looking at how things manage to
+            <strong>keep going</strong>&mdash;or slowly fall apart&mdash;over
+            time. It’s a lens for systems, from galaxies and ecosystems to
+            economies, technologies, and everyday life.
           </p>
         </header>
 
-        <main>
-          <section>
-            <p>
-              It responds fast to <strong>disasters</strong> and very slowly to
-              <strong>drift</strong>. It pours enormous effort into
-              <strong>cliffs</strong> and almost ignores the
-              <strong>slopes</strong> that lead there.
-            </p>
-            <p>
-              You can feel this in everyday life. Here are two familiar
-              stories.
-            </p>
-          </section>
+        <nav class="nav-grid">
+          <!-- Make sure these filenames match your actual pages -->
+          <a class="nav-button" href="what-is-chronodynamics.html">
+            What Is Chronodynamics?
+          </a>
+          <a class="nav-button secondary" href="a-lens-not-a-belief-system.html">
+            A Lens, Not a Belief System
+          </a>
+          <a class="nav-button secondary" href="origins-in-science.html">
+            Origins in Science
+          </a>
+          <a class="nav-button secondary" href="why-this-matters-now.html">
+            Why This Matters Now
+          </a>
+          <a class="nav-button secondary" href="what-youll-find-here.html">
+            What You’ll Find Here
+          </a>
+        </nav>
 
-          <section>
-            <div class="section-label">Story One</div>
-            <div class="story">
-              <div class="story-inner">
-                <h2>Elaine and the Almost-Preventable Heart Attack</h2>
-                <p class="story-tagline">
-                  <span class="story-name">Elaine</span> is 54. She works hard,
-                  grabs food on the run, sleeps badly, and keeps telling herself
-                  she’ll “get serious” about health next year.
-                </p>
-
-                <p>Over ten years, a quiet pattern forms:</p>
-                <ul>
-                  <li>Her weight creeps up.</li>
-                  <li>Her blood pressure is “a little high.”</li>
-                  <li>Her doctor mentions cholesterol once or twice.</li>
-                  <li>
-                    She promises to walk more. Sometimes she does. Mostly she
-                    doesn’t.
-                  </li>
-                </ul>
-
-                <p>The healthcare system is almost silent the whole time:</p>
-                <ul>
-                  <li>A quick visit once a year.</li>
-                  <li>A few numbers on a lab printout.</li>
-                  <li>A vague “We’ll keep an eye on it.”</li>
-                </ul>
-
-                <p>
-                  No one really talks with Elaine about her
-                  <strong>trajectory</strong>—about where this slow drift is
-                  likely to end if nothing changes. There’s no sense of:
-                </p>
-                <p>
-                  <em
-                    >“Here’s the path you’re on. Here’s what happens if we
-                    nudge it now, while it’s still easy.”</em
-                  >
-                </p>
-
-                <p>
-                  Then, one morning, she feels crushing chest pain in her
-                  kitchen. Suddenly the system <strong>explodes</strong> into
-                  action:
-                </p>
-                <ul>
-                  <li>Sirens. Oxygen. Monitors. IV lines.</li>
-                  <li>A cardiologist. A procedure. A stent.</li>
-                  <li>New medications, follow-up visits, lifestyle lectures.</li>
-                </ul>
-
-                <p>
-                  Tens of thousands of dollars of activity in a few frantic
-                  hours.
-                </p>
-
-                <p>From a chronodynamic point of view, this is upside-down:</p>
-                <ul>
-                  <li>
-                    For ten years, <strong>tiny nudges</strong> and honest
-                    conversations could have changed Elaine’s path cheaply and
-                    gently.
-                  </li>
-                  <li>Instead, the system mostly watched her drift.</li>
-                  <li>
-                    It really woke up only when she reached the edge of a
-                    cliff.
-                  </li>
-                </ul>
-
-                <p>
-                  The <strong>effort</strong> is heroic.<br />
-                  The <strong>timing</strong> is tragic.
-                </p>
-
-                <p>
-                  Healthcare is brilliant at pulling Elaine back from disaster.
-                  It was nearly absent while she walked toward it.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <section>
-            <div class="section-label">Story Two</div>
-            <div class="story">
-              <div class="story-inner">
-                <h2>Marcus and the Slow-Burning Mind</h2>
-                <p class="story-tagline">
-                  <span class="story-name">Marcus</span> is 38. He’s good at
-                  his job and awful at turning it off.
-                </p>
-
-                <p>At first, the changes are almost invisible:</p>
-                <ul>
-                  <li>He feels “wired” at night but calls it ambition.</li>
-                  <li>He starts waking at 3 a.m. with his mind racing.</li>
-                  <li>Coffee goes from one cup to four.</li>
-                  <li>Takeout replaces real meals. Exercise disappears.</li>
-                </ul>
-
-                <p>
-                  He keeps telling himself this is just a busy season. It will
-                  calm down soon. It doesn’t.
-                </p>
-
-                <p>Over a few years:</p>
-                <ul>
-                  <li>He’s more irritable and less patient.</li>
-                  <li>His relationships feel thinner.</li>
-                  <li>He’s exhausted but can’t relax.</li>
-                  <li>
-                    His world quietly shrinks to work, screens, and survival.
-                  </li>
-                </ul>
-
-                <p>
-                  When Marcus finally sees a doctor, the story has been
-                  unfolding for years, but they both live inside a
-                  fifteen-minute appointment.
-                </p>
-
-                <p>It goes something like this:</p>
-                <ul>
-                  <li>“Sounds like anxiety.”</li>
-                  <li>A prescription is written.</li>
-                  <li>“Let’s see how you do and check back in a few months.”</li>
-                </ul>
-
-                <p>
-                  The medication takes the edge off. But nothing in the
-                  <strong>structure of his days</strong> changes: the late-night
-                  emails, the constant alerts, the quiet fear that if he slows
-                  down, he’ll fall behind.
-                </p>
-
-                <p>From a chronodynamic view, Marcus is caught in:</p>
-                <ul>
-                  <li>
-                    <strong>Fast loops</strong> of relief (scrolling, snacking,
-                    pills), while
-                  </li>
-                  <li>
-                    His deeper well-being follows a
-                    <strong>slow downward slide</strong>.
-                  </li>
-                </ul>
-
-                <p>
-                  The system sees <strong>snapshots</strong>, not the movie.
-                </p>
-
-                <p>No one asks:</p>
-                <p>
-                  <em>“What would it take to make your life livable most days?”</em>
-                </p>
-
-                <p>
-                  The focus is on soothing symptoms, not reshaping the pattern
-                  that keeps producing them. Again, the timing is wrong:
-                </p>
-                <ul>
-                  <li>Quick reactions to discomfort.</li>
-                  <li>Very slow attention to the story underneath.</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <section>
-            <div class="section-label">Zooming Out</div>
-            <h2>Cliffs, Slopes, and the Wrong Dashboard</h2>
-            <p>
-              If you zoom out from Elaine and Marcus, you see the same pattern
-              everywhere.
-            </p>
-            <p>
-              The system is tuned for <strong>cliffs</strong>—heart attacks,
-              strokes, crises—and almost blind to <strong>slopes</strong>—years
-              of slow drift.
-            </p>
-
-            <p>
-              Hospitals, insurers, and drug companies all say they care about
-              health, and many people inside them truly do. But the
-              <em>machine</em> mainly watches:
-            </p>
-            <ul>
-              <li>What was billed.</li>
-              <li>What it cost.</li>
-              <li>How many procedures and prescriptions happened.</li>
-              <li>How this quarter’s numbers look.</li>
-            </ul>
-
-            <p>It has only a faint, delayed sense of questions that matter:</p>
-            <ul>
-              <li>Can I stay active and independent?</li>
-              <li>Will I be able to work, play, and care for others?</li>
-              <li>Is my mind clear, and is my life bearable?</li>
-            </ul>
-
-            <p>Chronodynamics doesn’t need equations to name this. It says:</p>
-            <p>
-              <strong
-                >The system responds quickly to money signals and slowly to
-                human signals.</strong
-              >
-            </p>
-
-            <p>
-              It’s not that everyone is uncaring. It’s that the
-              <strong>dashboard is mislabeled</strong>.
-            </p>
-
-            <p>
-              What’s easy to measure and bill for gets fast, sharp feedback.
-              What only shows up in people’s actual lives gets slow, blurry
-              feedback—if any.
-            </p>
-          </section>
-
-          <section>
-            <div class="section-label">A Different Pattern</div>
-            <h2>What a Saner Time-Pattern Would Feel Like</h2>
-            <p>
-              Chronodynamics doesn’t start with blame or miracles. It starts
-              with <strong>time</strong>. If we want health to last, our systems
-              have to be built around the way life really unfolds.
-            </p>
-
-            <div class="compare">
-              <div class="compare-card">
-                <div class="compare-title">Today’s Pattern</div>
-                <ul>
-                  <li>Quiet during years of slow drift.</li>
-                  <li>Loud and spectacular during crises.</li>
-                  <li>Paid most when things are already broken.</li>
-                  <li>People feel processed, not guided.</li>
-                </ul>
-              </div>
-              <div class="compare-card">
-                <div class="compare-title">A Chronodynamic Pattern</div>
-                <ul>
-                  <li>Small, early nudges when change is easy.</li>
-                  <li>
-                    Honest pictures of your <em>trajectory</em>, not just
-                    single numbers.
-                  </li>
-                  <li>
-                    Payment tied to keeping people steady over years, not just
-                    busy this month.
-                  </li>
-                  <li>
-                    Care teams rewarded for preventing cliffs, not just catching
-                    you at the bottom.
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <p>
-              In that kind of system, Elaine would have heard from her care team
-              long before the ambulance—with clear, simple choices that fit her
-              real life. Marcus wouldn’t just be handed a pill; he’d have
-              support reshaping his days so his nervous system isn’t always on
-              fire.
-            </p>
-
-            <p>
-              Chronodynamics is simply a language for that shift: from
-              <strong>late, dramatic rescues</strong> to
-              <strong>early, quiet course corrections</strong>. From a system
-              that mostly reacts to crashes, to one that helps people actually
-              <em>persist</em>—in their bodies, in their minds, and in the parts
-              of life that matter to them.
-            </p>
-
-            <p>
-              Elaine’s heart attack and Marcus’s slow-burning mind aren’t
-              personal failures. They’re what happens when human lives run on
-              one time-pattern and healthcare runs on another.
-            </p>
-
-            <p>
-              Chronodynamics doesn’t fix that by itself. But it gives us a clear
-              way to see it—and once you see it, it’s hard to unsee.
-            </p>
-          </section>
-
-          <section class="nav-row">
-            <div class="nav-note">
-              Explore how the same time-patterns show up in other corners of
-              life.
-            </div>
-            <div class="nav-links">
-              <a class="nav-button" href="index.html">
-                ← Back to Chronodynamics Home
-              </a>
-              <a class="nav-button" href="sound-familiar.html">
-                More stories that sound familiar
-              </a>
-            </div>
-          </section>
-        </main>
+        <p class="tagline">
+          Start anywhere. Each page is a different angle on the same question:
+          <em>what lets patterns, structures, and lives persist in a universe
+          that’s always running downhill?</em>
+        </p>
       </div>
 
-      <!-- SIDEBAR FOR VISUAL MATCH TO INDEX -->
+      <!-- RIGHT COLUMN -->
       <aside class="side">
         <div class="perspective-box">
           <div class="perspective-inner">
-            <p class="perspective-title">Related Perspectives</p>
-            <h2 class="perspective-heading">The same timing problem, elsewhere</h2>
+            <p class="perspective-title">Perspective in Chronodynamics</p>
+            <h2 class="perspective-heading">Does this time-pattern feel familiar?</h2>
             <p class="perspective-copy">
-              Chronodynamics doesn’t just apply to healthcare. The same
-              “late rescue, early neglect” pattern shows up in technology,
-              climate, finance, and ordinary personal habits.
+              Chronodynamics isn’t only about physics. It’s a way to see the
+              hidden timing behind everyday systems&mdash;how they drift, react,
+              or quietly fall behind long before they break.
             </p>
             <div class="perspective-buttons">
               <a class="perspective-button" href="sound-familiar.html">
                 Sound Familiar
               </a>
-              <a class="perspective-button" href="what-is-chronodynamics.html">
-                What Is Chronodynamics?
+              <a class="perspective-button" href="healthcare.html">
+                A Chronodynamic Look at U.S. Healthcare
               </a>
             </div>
             <p class="perspective-note">
-              Short, concrete examples that make the time-patterns of everyday
-              systems easier to see.
+              Short, concrete stories that show Chronodynamics at work in real
+              lives and real systems.
             </p>
           </div>
         </div>
@@ -749,3 +369,5 @@
   </div>
 </body>
 </html>
+
+
