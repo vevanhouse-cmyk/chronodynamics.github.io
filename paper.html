@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Paper — Chronodynamics of Persistence</title>
+  <meta name="description" content="Chronodynamics of Persistence: Feedback–Dissipation Timescales, a Persistence Number, and Learning Efficiency. Formal paper by V. E. House.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-bg: #FAFAF7; --color-text: #2D2D2D; --color-text-secondary: #5A5A5A;
+      --color-accent: #1B3A5C; --color-accent-light: #2E5984; --color-border: #D8D5CF;
+      --color-card-bg: #FFFFFF; --color-card-border: #E5E2DC;
+      --font-body: 'Source Serif 4', Georgia, serif; --font-heading: 'DM Sans', system-ui, sans-serif;
+      --max-width: 720px; --max-width-wide: 960px;
+    }
+    html { font-size: 18px; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-body); color: var(--color-text); background-color: var(--color-bg); line-height: 1.65; }
+
+    nav { max-width: var(--max-width-wide); margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--color-border); }
+    .nav-site-name { font-family: var(--font-heading); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-family: var(--font-heading); font-size: 0.82rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--color-accent); }
+
+    main { max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; }
+
+    .page-header { padding: 3.5rem 0 2.5rem; border-bottom: 1px solid var(--color-border); }
+    .page-header h1 { font-family: var(--font-body); font-weight: 300; font-size: 1.6rem; line-height: 1.35; }
+
+    .content { padding: 2.5rem 0; }
+    .content p { margin-bottom: 1.25rem; }
+    .content h2 { font-family: var(--font-heading); font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-accent); margin-top: 2.5rem; margin-bottom: 1rem; }
+    .content a { color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-border); transition: border-color 0.2s; }
+    .content a:hover { border-color: var(--color-accent); }
+
+    .citation-box {
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-card-border);
+      border-radius: 4px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+    .citation-box .paper-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+    .citation-box .paper-author {
+      color: var(--color-text-secondary);
+      margin-bottom: 0.3rem;
+    }
+    .citation-box .paper-meta {
+      color: var(--color-text-secondary);
+      font-size: 0.82rem;
+    }
+
+    /* UPDATE: Replace # with actual arXiv URL -->  */
+    .download-link {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--color-accent);
+      border: 1px solid var(--color-accent);
+      border-radius: 4px;
+      padding: 0.65rem 1.25rem;
+      text-decoration: none;
+      margin: 1.5rem 0;
+      transition: background-color 0.2s, color 0.2s;
+    }
+    .download-link:hover {
+      background-color: var(--color-accent);
+      color: #fff;
+      border-bottom: 1px solid var(--color-accent);
+    }
+
+    .results-list {
+      list-style: none;
+      margin: 1rem 0;
+      padding: 0;
+    }
+    .results-list li {
+      padding: 0.5rem 0 0.5rem 1.25rem;
+      position: relative;
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+    .results-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.95rem;
+      width: 6px;
+      height: 6px;
+      background: var(--color-accent);
+      border-radius: 50%;
+    }
+
+    .abstract-text {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: var(--color-text-secondary);
+      border-left: 3px solid var(--color-border);
+      padding-left: 1.25rem;
+      margin: 1.25rem 0;
+    }
+
+    .status-note {
+      font-family: var(--font-heading);
+      font-size: 0.82rem;
+      color: var(--color-text-secondary);
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-card-border);
+      border-radius: 4px;
+      padding: 0.75rem 1rem;
+      margin-top: 2rem;
+    }
+
+    footer { max-width: var(--max-width); margin: 0 auto; padding: 2.5rem 2rem; font-family: var(--font-heading); font-size: 0.78rem; color: var(--color-text-secondary); display: flex; justify-content: space-between; align-items: baseline; }
+    footer a { color: var(--color-text-secondary); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      html { font-size: 17px; }
+      nav { flex-direction: column; gap: 0.75rem; padding: 1.25rem 1.5rem; }
+      .nav-links { gap: 1.25rem; flex-wrap: wrap; }
+      main { padding: 0 1.5rem; }
+      footer { flex-direction: column; gap: 0.5rem; padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-site-name">Chronodynamics</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/paper" class="active">Paper</a></li>
+      <li><a href="/books">Books</a></li>
+      <li><a href="/writing">Writing</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="page-header">
+      <h1>The Paper</h1>
+    </section>
+
+    <section class="content">
+
+      <div class="citation-box">
+        <div class="paper-title">Chronodynamics of Persistence: Feedback–Dissipation Timescales, a Persistence Number, and Learning Efficiency</div>
+        <div class="paper-author">Victor Evan House</div>
+        <div class="paper-meta">Independent Researcher, Newberry, FL &nbsp;·&nbsp; January 2026</div>
+      </div>
+
+      <!-- UPDATE: Replace # with arXiv URL once posted -->
+      <a href="#" class="download-link">Read the full paper on arXiv →</a>
+
+      <h2>Abstract</h2>
+
+      <div class="abstract-text">
+        <p>
+          Many open, driven systems maintain low-entropy structure far longer than
+          microscopic relaxation times by coupling feedback control to free-energy
+          reservoirs. We develop a chronodynamic perspective organised around two
+          effective characteristic times: a feedback time τ<sub>fb</sub>(S),
+          describing how quickly corrective dynamics restore a structure S, and a
+          dissipation time τ<sub>diss</sub>(S), describing how quickly open-loop
+          processes would erase it. Their ratio defines the dimensionless
+          persistence number Π(S)&nbsp;=&nbsp;τ<sub>diss</sub>(S)&nbsp;/&nbsp;τ<sub>fb</sub>(S).
+        </p>
+        <p style="margin-top: 0.75rem;">
+          The Chronodynamic Persistence Principle (CPP) states that robust
+          feedback-maintained persistence requires Π&nbsp;>&nbsp;1, interpreted
+          conservatively through a mode-wise bottleneck Π<sub>min</sub> in
+          multi-mode systems. We ground CPP in Freidlin–Wentzell large-deviations
+          theory, showing that the established connection between barrier height and
+          mean first-passage time maps precisely onto Π, yielding exponential
+          lifetime scaling for Π&nbsp;>&nbsp;1 and a diffusion-limited floor for
+          Π&nbsp;<&nbsp;1.
+        </p>
+      </div>
+
+      <h2>Key Results</h2>
+
+      <ul class="results-list">
+        <li>
+          <strong>Two effective timescales</strong> — τ<sub>fb</sub>(S) and
+          τ<sub>diss</sub>(S) — defined operationally for any feedback-maintained
+          structure at a chosen descriptive level.
+        </li>
+        <li>
+          <strong>The persistence number Π</strong> — a dimensionless ratio
+          analogous to the Damköhler or Péclet numbers, partitioning parameter
+          space into persistent (Π&nbsp;>&nbsp;1) and transient (Π&nbsp;<&nbsp;1)
+          regimes.
+        </li>
+        <li>
+          <strong>The CPP theorem</strong> — grounded in Freidlin–Wentzell theory:
+          exponential lifetime scaling for Π&nbsp;>&nbsp;1, diffusion floor for
+          Π&nbsp;<&nbsp;1, with analytic crossover near Π&nbsp;≈&nbsp;1.
+        </li>
+        <li>
+          <strong>The Π<sub>min</sub> bottleneck</strong> — rigorously justified
+          via minimum-action escape paths: in multi-mode systems, persistence is
+          governed by the weakest mode.
+        </li>
+        <li>
+          <strong>Chronodynamic dominance condition (CDom)</strong> — identifies
+          when the timescale balance is the binding constraint on persistence,
+          versus resource depletion, structural instability, or mode coupling.
+        </li>
+        <li>
+          <strong>Three-tier measurement protocols</strong> — from directly
+          controllable engineered systems through complex biological systems,
+          with a worked E.&nbsp;coli heat shock example.
+        </li>
+        <li>
+          <strong>Thermodynamic learning efficiency η<sub>L</sub></strong> —
+          a Landauer-normalised benchmark connecting information gain to
+          energetic cost.
+        </li>
+      </ul>
+
+      <!-- UPDATE: Change status as paper progresses through review -->
+      <div class="status-note">
+        <strong>Status:</strong> Posted on arXiv. Submitted to [journal name].
+        <!-- Update this line as the paper's status changes. -->
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 V. E. House</span>
+    <a href="mailto:feedback@chronodynamics.net">feedback@chronodynamics.net</a>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About V. E. House — Chronodynamics</title>
+  <meta name="description" content="V. E. House is a physical chemist and systems thinker who developed the chronodynamics framework for understanding persistence in dissipative systems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-bg: #FAFAF7; --color-text: #2D2D2D; --color-text-secondary: #5A5A5A;
+      --color-accent: #1B3A5C; --color-accent-light: #2E5984; --color-border: #D8D5CF;
+      --font-body: 'Source Serif 4', Georgia, serif; --font-heading: 'DM Sans', system-ui, sans-serif;
+      --max-width: 720px; --max-width-wide: 960px;
+    }
+    html { font-size: 18px; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-body); color: var(--color-text); background-color: var(--color-bg); line-height: 1.65; }
+
+    nav { max-width: var(--max-width-wide); margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--color-border); }
+    .nav-site-name { font-family: var(--font-heading); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-family: var(--font-heading); font-size: 0.82rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--color-accent); }
+
+    main { max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; }
+
+    .page-header { padding: 3.5rem 0 2.5rem; border-bottom: 1px solid var(--color-border); }
+    .page-header h1 { font-family: var(--font-body); font-weight: 300; font-size: 1.6rem; line-height: 1.35; color: var(--color-text); }
+
+    .content { padding: 2.5rem 0; }
+    .content p { margin-bottom: 1.25rem; }
+    .content p:last-child { margin-bottom: 0; }
+    .content h2 { font-family: var(--font-heading); font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-accent); margin-top: 2.5rem; margin-bottom: 1rem; }
+    .content a { color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-border); transition: border-color 0.2s; }
+    .content a:hover { border-color: var(--color-accent); }
+
+    .contact-line { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--color-border); font-size: 0.92rem; color: var(--color-text-secondary); }
+    .contact-line a { color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-border); }
+
+    footer { max-width: var(--max-width); margin: 0 auto; padding: 2.5rem 2rem; font-family: var(--font-heading); font-size: 0.78rem; color: var(--color-text-secondary); display: flex; justify-content: space-between; align-items: baseline; }
+    footer a { color: var(--color-text-secondary); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      html { font-size: 17px; }
+      nav { flex-direction: column; gap: 0.75rem; padding: 1.25rem 1.5rem; }
+      .nav-links { gap: 1.25rem; flex-wrap: wrap; }
+      main { padding: 0 1.5rem; }
+      footer { flex-direction: column; gap: 0.5rem; padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-site-name">Chronodynamics</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about" class="active">About</a></li>
+      <li><a href="/paper">Paper</a></li>
+      <li><a href="/books">Books</a></li>
+      <li><a href="/writing">Writing</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="page-header">
+      <h1>About the Author</h1>
+    </section>
+
+    <section class="content">
+
+      <!-- UPDATE: Add your headshot image here if desired -->
+      <!-- <img src="/images/headshot.jpg" alt="V. E. House" style="width: 180px; border-radius: 4px; float: right; margin: 0 0 1.5rem 2rem;"> -->
+
+      <p>
+        V.&nbsp;E.&nbsp;House is a scientist, engineer, and systems thinker trained
+        in physical chemistry. His professional work has spanned energy systems,
+        materials performance, and the design of processes that must remain reliable
+        under sustained operational stress.
+      </p>
+
+      <p>
+        Over decades of working with systems under pressure, a recurring pattern
+        became hard to ignore: failures that seemed sudden were almost always the
+        visible endpoint of a long, quiet process in which corrective feedback had
+        fallen behind structural erosion. The same dynamics appeared in physical
+        infrastructure, in organisations, in biological systems, and in people.
+      </p>
+
+      <p>
+        The question became: is there a single formal condition that governs whether
+        a feedback-maintained pattern persists or collapses?
+      </p>
+
+      <h2>The Framework</h2>
+
+      <p>
+        Chronodynamics is the answer to that question. The framework is organised
+        around a dimensionless persistence number&nbsp;Π — the ratio of dissipation
+        time to feedback time — and a theorem, proved using Freidlin–Wentzell
+        large-deviations theory, that connects this ratio to exponential lifetime
+        scaling. A chronodynamic dominance condition identifies when the timescale
+        balance is the binding constraint on persistence, and a failure taxonomy
+        classifies the ways structures can fail even when Π&nbsp;>&nbsp;1.
+      </p>
+
+      <p>
+        The formal results are presented in a
+        <a href="/paper">companion paper</a>. The framework is developed across all
+        scales of physical organisation — from atoms and stars through prebiotic
+        chemistry, evolution, and ecosystems to neural prediction and the economics
+        of complexity — in a technical monograph. Its implications for the origin
+        of life are explored in a popular science book, and its applications to
+        human experience are developed in a third volume.
+      </p>
+
+      <h2>The Project</h2>
+
+      <p>
+        The Chronodynamics project consists of four pieces, each aimed at a
+        different audience:
+      </p>
+
+      <p>
+        A <a href="/paper">formal paper</a> grounding the persistence theorem in
+        established large-deviations theory. A comprehensive
+        <a href="/books">technical monograph</a> following the inequality from atoms
+        to consciousness. A <a href="/books">popular science book</a> arguing that
+        natural selection did not begin with life. And an
+        <a href="/books">applied book</a> translating the framework into the language
+        of bodies, habits, institutions, stress, and everyday persistence.
+      </p>
+
+      <p>
+        Together they form a single argument developed at different depths for
+        different readers: that persistence in a dissipative universe is governed
+        by a temporal inequality, and that this inequality — once you see it — is
+        visible everywhere.
+      </p>
+
+      <div class="contact-line">
+        For speaking, interview, press, or research inquiries:
+        <a href="mailto:feedback@chronodynamics.net">feedback@chronodynamics.net</a>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 V. E. House</span>
+    <a href="mailto:feedback@chronodynamics.net">feedback@chronodynamics.net</a>
+  </footer>
+
+</body>
+</html>

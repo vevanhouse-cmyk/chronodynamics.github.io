@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books — Chronodynamics</title>
+  <meta name="description" content="Three books exploring the chronodynamics framework: Patterns of Persistence, The First Natural Selection, and the Chronodynamics monograph.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-bg: #FAFAF7; --color-text: #2D2D2D; --color-text-secondary: #5A5A5A;
+      --color-accent: #1B3A5C; --color-accent-light: #2E5984; --color-border: #D8D5CF;
+      --color-card-bg: #FFFFFF; --color-card-border: #E5E2DC;
+      --font-body: 'Source Serif 4', Georgia, serif; --font-heading: 'DM Sans', system-ui, sans-serif;
+      --max-width: 720px; --max-width-wide: 960px;
+    }
+    html { font-size: 18px; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-body); color: var(--color-text); background-color: var(--color-bg); line-height: 1.65; }
+
+    nav { max-width: var(--max-width-wide); margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--color-border); }
+    .nav-site-name { font-family: var(--font-heading); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-family: var(--font-heading); font-size: 0.82rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--color-accent); }
+
+    main { max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; }
+
+    .page-header { padding: 3.5rem 0 2.5rem; border-bottom: 1px solid var(--color-border); }
+    .page-header h1 { font-family: var(--font-body); font-weight: 300; font-size: 1.6rem; line-height: 1.35; }
+    .page-header p { margin-top: 0.75rem; color: var(--color-text-secondary); font-size: 0.95rem; }
+
+    .content { padding: 2.5rem 0; }
+
+    .book-entry {
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .book-entry:last-child {
+      border-bottom: none;
+    }
+
+    .book-label {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .book-title {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 1.2rem;
+      line-height: 1.35;
+      margin-bottom: 0.2rem;
+    }
+
+    .book-subtitle {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .book-description {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+
+    .book-audience {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      font-style: italic;
+    }
+
+    .book-status {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-secondary);
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-card-border);
+      border-radius: 3px;
+      padding: 0.25rem 0.6rem;
+      margin-top: 0.75rem;
+    }
+
+    .book-status.available {
+      color: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+
+    /* UPDATE: Add .book-link style when purchase links become available */
+    .book-link {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.82rem;
+      color: var(--color-accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--color-border);
+      margin-top: 0.75rem;
+      transition: border-color 0.2s;
+    }
+    .book-link:hover { border-color: var(--color-accent); }
+
+    footer { max-width: var(--max-width); margin: 0 auto; padding: 2.5rem 2rem; font-family: var(--font-heading); font-size: 0.78rem; color: var(--color-text-secondary); display: flex; justify-content: space-between; align-items: baseline; }
+    footer a { color: var(--color-text-secondary); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      html { font-size: 17px; }
+      nav { flex-direction: column; gap: 0.75rem; padding: 1.25rem 1.5rem; }
+      .nav-links { gap: 1.25rem; flex-wrap: wrap; }
+      main { padding: 0 1.5rem; }
+      footer { flex-direction: column; gap: 0.5rem; padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-site-name">Chronodynamics</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/paper">Paper</a></li>
+      <li><a href="/books" class="active">Books</a></li>
+      <li><a href="/writing">Writing</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="page-header">
+      <h1>Books</h1>
+      <p>Three books develop the chronodynamic framework at different depths for different audiences.</p>
+    </section>
+
+    <section class="content">
+
+      <!-- BOOK 1: POP -->
+      <div class="book-entry">
+        <div class="book-label">Applied</div>
+        <div class="book-title">Patterns of Persistence</div>
+        <div class="book-subtitle">Life Under Pressure, Over Time</div>
+        <p class="book-description">
+          Why do some things last — bodies, institutions, relationships, ideas — while
+          others quietly erode, even when they appear stable on the surface? This book
+          takes a chronodynamic view of that question. It explores what it takes to
+          persist — in your body, your work, your relationships, and the larger systems
+          you depend on — and what it costs when the feedback that holds things together
+          falls behind the erosion that pulls them apart.
+        </p>
+        <p class="book-audience">
+          For anyone who has noticed that something about the patterns they're sustaining
+          is off, and wants a structural explanation rather than a morning routine.
+        </p>
+        <!-- UPDATE: Change status and add purchase link when published -->
+        <span class="book-status">Forthcoming 2026</span>
+      </div>
+
+      <!-- BOOK 2: TFNS -->
+      <div class="book-entry">
+        <div class="book-label">Popular Science</div>
+        <div class="book-title">The First Natural Selection</div>
+        <div class="book-subtitle"></div>
+        <p class="book-description">
+          Natural selection did not begin with life. Life is what selection looks like
+          once memory becomes heritable and persistence becomes self-reinforcing. This
+          book removes the traditional boundary between the origin of life and the
+          origin of evolution, and traces a continuous physical logic in which
+          selection — the differential persistence of some patterns over others —
+          operates from the first moment chemistry becomes historical, long before
+          anything we would call an organism exists.
+        </p>
+        <p class="book-audience">
+          For readers of Nick Lane, Sean Carroll, and Peter Godfrey-Smith.
+        </p>
+        <span class="book-status">Forthcoming</span>
+      </div>
+
+      <!-- BOOK 3: Monograph -->
+      <div class="book-entry">
+        <div class="book-label">Technical</div>
+        <div class="book-title">Chronodynamics</div>
+        <div class="book-subtitle">The Temporal Physics of Persistence</div>
+        <p class="book-description">
+          The comprehensive technical development of the chronodynamic framework.
+          Beginning from a formally proved persistence theorem grounded in
+          Freidlin–Wentzell large-deviations theory, this monograph follows the
+          persistence inequality across every scale of physical organisation: atoms,
+          stars, geological formations, dissipative structures, prebiotic chemistry,
+          cellular regulation, evolution, ecosystems, neural prediction, intelligence,
+          and the economics of complexity. Includes testable predictions, solvable
+          models, cross-scale Π estimates, and speculative extensions.
+        </p>
+        <p class="book-audience">
+          For scientists and technically serious readers across physics, biology,
+          and complexity science.
+        </p>
+        <span class="book-status">Forthcoming</span>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 V. E. House</span>
+    <a href="mailto:feedback@chronodynamics.net">feedback@chronodynamics.net</a>
+  </footer>
+
+</body>
+</html>
