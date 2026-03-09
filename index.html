@@ -11,7 +11,6 @@
   <style>
     /* ── Reset & Base ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --color-bg: #FAFAF7;
       --color-text: #2D2D2D;
@@ -26,20 +25,17 @@
       --max-width: 720px;
       --max-width-wide: 960px;
     }
-
     html {
       font-size: 18px;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-
     body {
       font-family: var(--font-body);
       color: var(--color-text);
       background-color: var(--color-bg);
       line-height: 1.65;
     }
-
     /* ── Navigation ── */
     nav {
       max-width: var(--max-width-wide);
@@ -50,7 +46,6 @@
       align-items: baseline;
       border-bottom: 1px solid var(--color-border);
     }
-
     .nav-site-name {
       font-family: var(--font-heading);
       font-weight: 600;
@@ -60,13 +55,11 @@
       color: var(--color-accent);
       text-decoration: none;
     }
-
     .nav-links {
       display: flex;
       gap: 2rem;
       list-style: none;
     }
-
     .nav-links a {
       font-family: var(--font-heading);
       font-size: 0.82rem;
@@ -76,28 +69,23 @@
       letter-spacing: 0.02em;
       transition: color 0.2s;
     }
-
     .nav-links a:hover {
       color: var(--color-accent);
     }
-
     .nav-links a.active {
       color: var(--color-accent);
     }
-
     /* ── Main Content ── */
     main {
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 0 2rem;
     }
-
     /* ── Hero / Opening ── */
     .hero {
       padding: 4.5rem 0 3rem;
       border-bottom: 1px solid var(--color-border);
     }
-
     .hero h1 {
       font-family: var(--font-body);
       font-weight: 300;
@@ -107,27 +95,22 @@
       margin-bottom: 0;
       max-width: 620px;
     }
-
     .hero h1 em {
       font-style: italic;
       font-weight: 400;
     }
-
     /* ── Framework Description ── */
     .framework {
       padding: 3rem 0;
       border-bottom: 1px solid var(--color-border);
     }
-
     .framework p {
       margin-bottom: 1.25rem;
       color: var(--color-text);
     }
-
     .framework p:last-child {
       margin-bottom: 0;
     }
-
     .framework .equation {
       display: block;
       text-align: center;
@@ -138,25 +121,21 @@
       padding: 1.5rem 0;
       letter-spacing: 0.01em;
     }
-
     .framework .equation span.symbol {
       font-style: italic;
       font-family: var(--font-body);
     }
-
     /* ── Pathway Cards ── */
     .pathways {
       padding: 3rem 0;
       border-bottom: 1px solid var(--color-border);
     }
-
     .pathways-grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 1.25rem;
       margin-top: 0.5rem;
     }
-
     .pathway-card {
       background: var(--color-card-bg);
       border: 1px solid var(--color-card-border);
@@ -168,12 +147,10 @@
       display: flex;
       flex-direction: column;
     }
-
     .pathway-card:hover {
       border-color: var(--color-accent-light);
       box-shadow: 0 2px 12px rgba(27, 58, 92, 0.08);
     }
-
     .pathway-card .card-label {
       font-family: var(--font-heading);
       font-size: 0.72rem;
@@ -183,7 +160,6 @@
       color: var(--color-accent);
       margin-bottom: 0.6rem;
     }
-
     .pathway-card .card-title {
       font-family: var(--font-heading);
       font-weight: 600;
@@ -192,14 +168,12 @@
       margin-bottom: 0.6rem;
       color: var(--color-text);
     }
-
     .pathway-card .card-desc {
       font-size: 0.82rem;
       line-height: 1.5;
       color: var(--color-text-secondary);
       flex-grow: 1;
     }
-
     .pathway-card .card-arrow {
       font-family: var(--font-heading);
       font-size: 0.8rem;
@@ -207,30 +181,25 @@
       margin-top: 1rem;
       font-weight: 500;
     }
-
     /* ── About Teaser ── */
     .about-teaser {
       padding: 3rem 0;
       border-bottom: 1px solid var(--color-border);
     }
-
     .about-teaser p {
       color: var(--color-text-secondary);
       font-size: 0.95rem;
       margin-bottom: 1rem;
     }
-
     .about-teaser a {
       color: var(--color-accent);
       text-decoration: none;
       border-bottom: 1px solid var(--color-border);
       transition: border-color 0.2s;
     }
-
     .about-teaser a:hover {
       border-color: var(--color-accent);
     }
-
     /* ── Footer ── */
     footer {
       max-width: var(--max-width);
@@ -243,18 +212,15 @@
       justify-content: space-between;
       align-items: baseline;
     }
-
     footer a {
       color: var(--color-text-secondary);
       text-decoration: none;
       border-bottom: 1px solid transparent;
       transition: border-color 0.2s;
     }
-
     footer a:hover {
       border-color: var(--color-text-secondary);
     }
-
     /* ── Links in body text ── */
     .framework a, .about-teaser a {
       color: var(--color-accent);
@@ -262,44 +228,34 @@
       border-bottom: 1px solid var(--color-border);
       transition: border-color 0.2s;
     }
-
     .framework a:hover, .about-teaser a:hover {
       border-color: var(--color-accent);
     }
-
     /* ── Responsive ── */
     @media (max-width: 768px) {
       html { font-size: 17px; }
-
       nav {
         flex-direction: column;
         gap: 0.75rem;
         padding: 1.25rem 1.5rem;
       }
-
       .nav-links {
         gap: 1.25rem;
         flex-wrap: wrap;
       }
-
       main { padding: 0 1.5rem; }
-
       .hero { padding: 3rem 0 2.5rem; }
-
       .hero h1 { font-size: 1.45rem; }
-
       .pathways-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
       }
-
       footer {
         flex-direction: column;
         gap: 0.5rem;
         padding: 2rem 1.5rem;
       }
     }
-
     @media (max-width: 480px) {
       .nav-links { gap: 1rem; }
       .hero h1 { font-size: 1.3rem; }
@@ -307,7 +263,6 @@
   </style>
 </head>
 <body>
-
   <!-- ── Navigation ── -->
   <nav>
     <a href="/" class="nav-site-name">Chronodynamics</a>
@@ -319,14 +274,11 @@
       <li><a href="/writing.html">Writing</a></li>
     </ul>
   </nav>
-
   <main>
-
     <!-- ── Hero ── -->
     <section class="hero">
       <h1>A mathematical framework for understanding why things last — from atoms and cells to institutions and&nbsp;lives.</h1>
     </section>
-
     <!-- ── Framework Description ── -->
     <section class="framework">
       <p>
@@ -334,7 +286,6 @@
         patterns — cells, relationships, institutions, ecosystems — manage to keep
         going while others quietly erode.
       </p>
-
       <p>
         The framework is built on a single inequality. For any structure maintained
         by feedback in a dissipative environment, there is a characteristic feedback
@@ -342,11 +293,9 @@
         (<em>τ</em><sub>diss</sub>). Their ratio — the <strong>persistence
         number&nbsp;Π</strong> — governs how long the structure can last.
       </p>
-
       <div class="equation">
         <span class="symbol">Π</span> &nbsp;=&nbsp; <span class="symbol">τ</span><sub>diss</sub> &thinsp;/&thinsp; <span class="symbol">τ</span><sub>fb</sub>
       </div>
-
       <p>
         When feedback outpaces erosion (Π&nbsp;>&nbsp;1), lifetimes grow exponentially
         with redundancy. When it doesn't, structures drift toward failure. This result
@@ -356,18 +305,15 @@
         <a href="/paper.html">companion paper</a> and a series of
         <a href="/books.html">books</a>.
       </p>
-
       <p>
         Chronodynamics does not modify the laws of physics. It organises what we
         already know about non-equilibrium systems around a temporal question that
         turns out to be surprisingly consequential: <em>is feedback fast enough?</em>
       </p>
     </section>
-
     <!-- ── Pathway Cards ── -->
     <section class="pathways">
       <div class="pathways-grid">
-
         <a href="/paper.html" class="pathway-card">
           <div class="card-label">The Science</div>
           <div class="card-title">Read the Paper</div>
@@ -378,7 +324,6 @@
           </div>
           <div class="card-arrow">View on arXiv →</div>
         </a>
-
         <a href="/books.html" class="pathway-card">
           <div class="card-label">The Books</div>
           <div class="card-title">Explore the Project</div>
@@ -388,9 +333,7 @@
           </div>
           <div class="card-arrow">See all three →</div>
         </a>
-
-        <!-- UPDATE: Replace # with your Substack URL once live -->
-        <a href="#" class="pathway-card">
+        <a href="https://chronodynamics.substack.com" class="pathway-card">
           <div class="card-label">The Writing</div>
           <div class="card-title">Subscribe</div>
           <div class="card-desc">
@@ -400,10 +343,8 @@
           </div>
           <div class="card-arrow">Read on Substack →</div>
         </a>
-
       </div>
     </section>
-
     <!-- ── About Teaser ── -->
     <section class="about-teaser">
       <p>
@@ -420,14 +361,11 @@
         <a href="/about.html">More about the author and the project →</a>
       </p>
     </section>
-
   </main>
-
   <!-- ── Footer ── -->
   <footer>
     <span>© 2026 V. E. House</span>
     <a href="mailto:feedback@chronodynamics.net">feedback@chronodynamics.net</a>
   </footer>
-
 </body>
 </html>
