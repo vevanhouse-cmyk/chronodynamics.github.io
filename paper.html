@@ -19,24 +19,19 @@
     }
     html { font-size: 18px; -webkit-font-smoothing: antialiased; }
     body { font-family: var(--font-body); color: var(--color-text); background-color: var(--color-bg); line-height: 1.65; }
-
     nav { max-width: var(--max-width-wide); margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--color-border); }
     .nav-site-name { font-family: var(--font-heading); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); text-decoration: none; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { font-family: var(--font-heading); font-size: 0.82rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--color-accent); }
-
     main { max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; }
-
     .page-header { padding: 3.5rem 0 2.5rem; border-bottom: 1px solid var(--color-border); }
     .page-header h1 { font-family: var(--font-body); font-weight: 300; font-size: 1.6rem; line-height: 1.35; }
-
     .content { padding: 2.5rem 0; }
     .content p { margin-bottom: 1.25rem; }
     .content h2 { font-family: var(--font-heading); font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-accent); margin-top: 2.5rem; margin-bottom: 1rem; }
     .content a { color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-border); transition: border-color 0.2s; }
     .content a:hover { border-color: var(--color-accent); }
-
     .citation-box {
       background: var(--color-card-bg);
       border: 1px solid var(--color-card-border);
@@ -59,8 +54,6 @@
       color: var(--color-text-secondary);
       font-size: 0.82rem;
     }
-
-    /* UPDATE: Replace # with actual arXiv URL -->  */
     .download-link {
       display: inline-block;
       font-family: var(--font-heading);
@@ -79,7 +72,6 @@
       color: #fff;
       border-bottom: 1px solid var(--color-accent);
     }
-
     .results-list {
       list-style: none;
       margin: 1rem 0;
@@ -101,7 +93,6 @@
       background: var(--color-accent);
       border-radius: 50%;
     }
-
     .abstract-text {
       font-size: 0.92rem;
       line-height: 1.6;
@@ -110,7 +101,6 @@
       padding-left: 1.25rem;
       margin: 1.25rem 0;
     }
-
     .status-note {
       font-family: var(--font-heading);
       font-size: 0.82rem;
@@ -121,10 +111,8 @@
       padding: 0.75rem 1rem;
       margin-top: 2rem;
     }
-
     footer { max-width: var(--max-width); margin: 0 auto; padding: 2.5rem 2rem; font-family: var(--font-heading); font-size: 0.78rem; color: var(--color-text-secondary); display: flex; justify-content: space-between; align-items: baseline; }
     footer a { color: var(--color-text-secondary); text-decoration: none; }
-
     @media (max-width: 768px) {
       html { font-size: 17px; }
       nav { flex-direction: column; gap: 0.75rem; padding: 1.25rem 1.5rem; }
@@ -135,7 +123,6 @@
   </style>
 </head>
 <body>
-
   <nav>
     <a href="/" class="nav-site-name">Chronodynamics</a>
     <ul class="nav-links">
@@ -146,25 +133,20 @@
       <li><a href="/writing.html">Writing</a></li>
     </ul>
   </nav>
-
   <main>
     <section class="page-header">
       <h1>The Paper</h1>
     </section>
-
     <section class="content">
-
       <div class="citation-box">
         <div class="paper-title">Chronodynamics of Persistence: Feedback–Dissipation Timescales, a Persistence Number, and Learning Efficiency</div>
         <div class="paper-author">Victor Evan House</div>
         <div class="paper-meta">Independent Researcher, Newberry, FL &nbsp;·&nbsp; January 2026</div>
       </div>
 
-      <!-- UPDATE: Replace # with arXiv URL once posted -->
-      <a href="#" class="download-link">Read the full paper on arXiv →</a>
+      <a href="https://zenodo.org/records/19410683" class="download-link">Read the full paper on Zenodo →</a>
 
       <h2>Abstract</h2>
-
       <div class="abstract-text">
         <p>
           Many open, driven systems maintain low-entropy structure far longer than
@@ -189,7 +171,6 @@
       </div>
 
       <h2>Key Results</h2>
-
       <ul class="results-list">
         <li>
           <strong>Two effective timescales</strong> — τ<sub>fb</sub>(S) and
@@ -229,19 +210,14 @@
         </li>
       </ul>
 
-      <!-- UPDATE: Change status as paper progresses through review -->
       <div class="status-note">
-        <strong>Status:</strong> Posted on arXiv. Submitted to [journal name].
-        <!-- Update this line as the paper's status changes. -->
+        <strong>Status:</strong> Preprint available on <a href="https://zenodo.org/records/19410683">Zenodo</a> (DOI: 10.5281/zenodo.19410683). Journal submission in progress.
       </div>
-
     </section>
   </main>
-
   <footer>
     <span>© 2026 V. E. House</span>
     <a href="mailto:feedback@chronodynamics.net">feedback@chronodynamics.net</a>
   </footer>
-
 </body>
 </html>
