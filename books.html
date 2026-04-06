@@ -19,21 +19,16 @@
     }
     html { font-size: 18px; -webkit-font-smoothing: antialiased; }
     body { font-family: var(--font-body); color: var(--color-text); background-color: var(--color-bg); line-height: 1.65; }
-
     nav { max-width: var(--max-width-wide); margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--color-border); }
     .nav-site-name { font-family: var(--font-heading); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); text-decoration: none; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { font-family: var(--font-heading); font-size: 0.82rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--color-accent); }
-
     main { max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; }
-
     .page-header { padding: 3.5rem 0 2.5rem; border-bottom: 1px solid var(--color-border); }
     .page-header h1 { font-family: var(--font-body); font-weight: 300; font-size: 1.6rem; line-height: 1.35; }
     .page-header p { margin-top: 0.75rem; color: var(--color-text-secondary); font-size: 0.95rem; }
-
     .content { padding: 2.5rem 0; }
-
     .book-entry {
       padding: 2rem 0;
       border-bottom: 1px solid var(--color-border);
@@ -41,7 +36,6 @@
     .book-entry:last-child {
       border-bottom: none;
     }
-
     .book-label {
       font-family: var(--font-heading);
       font-weight: 600;
@@ -51,7 +45,6 @@
       color: var(--color-accent);
       margin-bottom: 0.5rem;
     }
-
     .book-title {
       font-family: var(--font-body);
       font-weight: 600;
@@ -59,7 +52,6 @@
       line-height: 1.35;
       margin-bottom: 0.2rem;
     }
-
     .book-subtitle {
       font-family: var(--font-body);
       font-style: italic;
@@ -67,19 +59,16 @@
       color: var(--color-text-secondary);
       margin-bottom: 1rem;
     }
-
     .book-description {
       font-size: 0.95rem;
       line-height: 1.6;
       margin-bottom: 0.75rem;
     }
-
     .book-audience {
       font-size: 0.85rem;
       color: var(--color-text-secondary);
       font-style: italic;
     }
-
     .book-status {
       display: inline-block;
       font-family: var(--font-heading);
@@ -94,29 +83,26 @@
       padding: 0.25rem 0.6rem;
       margin-top: 0.75rem;
     }
-
     .book-status.available {
       color: var(--color-accent);
       border-color: var(--color-accent);
     }
-
-    /* UPDATE: Add .book-link style when purchase links become available */
     .book-link {
       display: inline-block;
       font-family: var(--font-heading);
       font-weight: 600;
       font-size: 0.82rem;
-      color: var(--color-accent);
+      color: #FAFAF7;
+      background-color: var(--color-accent);
       text-decoration: none;
-      border-bottom: 1px solid var(--color-border);
+      border-radius: 3px;
+      padding: 0.45rem 1rem;
       margin-top: 0.75rem;
-      transition: border-color 0.2s;
+      transition: background-color 0.2s;
     }
-    .book-link:hover { border-color: var(--color-accent); }
-
+    .book-link:hover { background-color: var(--color-accent-light); }
     footer { max-width: var(--max-width); margin: 0 auto; padding: 2.5rem 2rem; font-family: var(--font-heading); font-size: 0.78rem; color: var(--color-text-secondary); display: flex; justify-content: space-between; align-items: baseline; }
     footer a { color: var(--color-text-secondary); text-decoration: none; }
-
     @media (max-width: 768px) {
       html { font-size: 17px; }
       nav { flex-direction: column; gap: 0.75rem; padding: 1.25rem 1.5rem; }
@@ -127,7 +113,6 @@
   </style>
 </head>
 <body>
-
   <nav>
     <a href="/" class="nav-site-name">Chronodynamics</a>
     <ul class="nav-links">
@@ -138,15 +123,12 @@
       <li><a href="/writing.html">Writing</a></li>
     </ul>
   </nav>
-
   <main>
     <section class="page-header">
       <h1>Books</h1>
       <p>Three books develop the chronodynamic framework at different depths for different audiences.</p>
     </section>
-
     <section class="content">
-
       <!-- BOOK 1: POP -->
       <div class="book-entry">
         <div class="book-label">Applied</div>
@@ -164,10 +146,8 @@
           For anyone who has noticed that something about the patterns they're sustaining
           is off, and wants a structural explanation rather than a morning routine.
         </p>
-        <!-- UPDATE: Change status and add purchase link when published -->
-        <span class="book-status">Forthcoming 2026</span>
+        <a href="https://www.amazon.com/dp/B0GCWV66PD" class="book-link" target="_blank" rel="noopener">Available on Amazon →</a>
       </div>
-
       <!-- BOOK 2: TFNS -->
       <div class="book-entry">
         <div class="book-label">Popular Science</div>
@@ -185,9 +165,8 @@
         <p class="book-audience">
           For readers of Nick Lane, Sean Carroll, and Peter Godfrey-Smith.
         </p>
-        <span class="book-status">Forthcoming</span>
+        <a href="https://www.amazon.com/dp/B0GTRYRJM3" class="book-link" target="_blank" rel="noopener">Available on Amazon →</a>
       </div>
-
       <!-- BOOK 3: Monograph -->
       <div class="book-entry">
         <div class="book-label">Technical</div>
@@ -209,14 +188,27 @@
         </p>
         <span class="book-status">Forthcoming</span>
       </div>
-
+      <!-- BOOK 4: BIMC -->
+      <div class="book-entry">
+        <div class="book-label">Investigation</div>
+        <div class="book-title">Butter in My Coffee</div>
+        <div class="book-subtitle"></div>
+        <p class="book-description">
+          A personal investigation into how mainstream dietary and medical advice
+          produces the outcomes it claims to prevent. Part memoir, part systems
+          analysis — tracing the institutional, commercial, and scientific failures
+          embedded in the food and healthcare systems.
+        </p>
+        <p class="book-audience">
+          For anyone who followed the rules, got sicker, and wants to understand why.
+        </p>
+        <a href="https://www.amazon.com/dp/B0GS6LRMHT" class="book-link" target="_blank" rel="noopener">Available on Amazon →</a>
+      </div>
     </section>
   </main>
-
   <footer>
     <span>© 2026 V. E. House</span>
     <a href="mailto:feedback@chronodynamics.net">feedback@chronodynamics.net</a>
   </footer>
-
 </body>
 </html>
