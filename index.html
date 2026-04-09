@@ -200,6 +200,16 @@
     .about-teaser a:hover {
       border-color: var(--color-accent);
     }
+    .about-teaser .author-block {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.75rem;
+    }
+    .about-teaser .author-block img {
+      width: 140px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
     /* ── Footer ── */
     footer {
       max-width: var(--max-width);
@@ -249,6 +259,14 @@
       .pathways-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
+      }
+      .about-teaser .author-block {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .about-teaser .author-block img {
+        width: 120px;
       }
       footer {
         flex-direction: column;
@@ -347,19 +365,24 @@
     </section>
     <!-- ── About Teaser ── -->
     <section class="about-teaser">
-      <p>
-        Chronodynamics was developed by <a href="/about.html">V.&nbsp;E.&nbsp;House</a>,
-        a physical chemist whose professional work in energy systems, materials
-        performance, and process reliability led to a recurring observation: failures
-        that seem sudden are almost always the endpoint of a long process in which
-        corrective feedback has fallen behind structural erosion. The same dynamics
-        appeared in physical infrastructure, in organisations, in biological systems,
-        and in people. The question became: is there a single formal condition that
-        governs whether a feedback-maintained pattern persists or collapses?
-      </p>
-      <p>
-        <a href="/about.html">More about the author and the project →</a>
-      </p>
+      <div class="author-block">
+        <img src="headshot.jpg" alt="V. E. House">
+        <div>
+          <p>
+            Chronodynamics was developed by <a href="/about.html">V.&nbsp;E.&nbsp;House</a>,
+            a physical chemist whose professional work in energy systems, materials
+            performance, and process reliability led to a recurring observation: failures
+            that seem sudden are almost always the endpoint of a long process in which
+            corrective feedback has fallen behind structural erosion. The same dynamics
+            appeared in physical infrastructure, in organisations, in biological systems,
+            and in people. The question became: is there a single formal condition that
+            governs whether a feedback-maintained pattern persists or collapses?
+          </p>
+          <p>
+            <a href="/about.html">More about the author and the project →</a>
+          </p>
+        </div>
+      </div>
     </section>
   </main>
   <!-- ── Footer ── -->
